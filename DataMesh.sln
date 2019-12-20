@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataMesh.Composites", "DataMesh.Composites\DataMesh.Composites.csproj", "{19A7F508-6FC5-4C29-811C-8169C03C3960}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataMesh.Composites.Tests", "DataMesh.Composites.Tests\DataMesh.Composites.Tests.csproj", "{58BD2FCB-70A9-46C2-B67F-DD2747E4FB4F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19A7F508-6FC5-4C29-811C-8169C03C3960}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19A7F508-6FC5-4C29-811C-8169C03C3960}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19A7F508-6FC5-4C29-811C-8169C03C3960}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19A7F508-6FC5-4C29-811C-8169C03C3960}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58BD2FCB-70A9-46C2-B67F-DD2747E4FB4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58BD2FCB-70A9-46C2-B67F-DD2747E4FB4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58BD2FCB-70A9-46C2-B67F-DD2747E4FB4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58BD2FCB-70A9-46C2-B67F-DD2747E4FB4F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {75AB80F7-61DE-4782-B5E1-0882D93D6110}
+	EndGlobalSection
+EndGlobal
