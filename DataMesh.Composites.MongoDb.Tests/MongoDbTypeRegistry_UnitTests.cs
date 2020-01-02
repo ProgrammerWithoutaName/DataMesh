@@ -11,9 +11,9 @@ namespace DataMesh.Composites.MongoDb.Tests
         [Fact]
         public async Task Registry_ShouldUseMongoToImplementITypeRegistry()
         {
-            var fakeStore = new FakeStore<ITypeDefinition>();
-            var registry = new MongoDbTypeRegistry(fakeStore);
-
+            var fakeStore = new FakeStore<MongoSerializableTypeDefinition>();
+            var typeDefinitionFactory = new MongoTypeDefinitionFactory();
+            var registry = new MongoDbTypeRegistry(fakeStore, typeDefinitionFactory);
 
             var typeRegistryTest = new TypeRegistry_Tests();
             await typeRegistryTest.AssertTypeRegistryImplementation(registry);

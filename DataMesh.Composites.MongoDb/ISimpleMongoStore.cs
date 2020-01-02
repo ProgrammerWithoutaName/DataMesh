@@ -9,6 +9,7 @@ namespace DataMesh.Composites.MongoDb
     {
         Task<T> GetFirst(Expression<Func<T, bool>> filter);
         Task<IEnumerable<T>> GetAll(Expression<Func<T, bool>> filter);
+        Task<IEnumerable<T>> GetAll();
         Task Set(Expression<Func<T, bool>> filter, T item);
     }
 }

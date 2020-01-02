@@ -7,13 +7,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataMesh.Composites", "Data
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataMesh.Composites.Tests", "DataMesh.Composites.Tests\DataMesh.Composites.Tests.csproj", "{58BD2FCB-70A9-46C2-B67F-DD2747E4FB4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataMesh.Composites.MongoDb", "DataMesh.Composites.MongoDb\DataMesh.Composites.MongoDb.csproj", "{D7D63604-EF06-48B2-9096-52CA64296474}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataMesh.Composites.MongoDb", "DataMesh.Composites.MongoDb\DataMesh.Composites.MongoDb.csproj", "{D7D63604-EF06-48B2-9096-52CA64296474}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataMesh.Composites.MongoDb.Tests", "DataMesh.Composites.MongoDb.Tests\DataMesh.Composites.MongoDb.Tests.csproj", "{B738C4E3-6D98-47E9-B3AD-FB4223722D43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataMesh.Composites.MongoDb.Tests", "DataMesh.Composites.MongoDb.Tests\DataMesh.Composites.MongoDb.Tests.csproj", "{B738C4E3-6D98-47E9-B3AD-FB4223722D43}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MongoDb", "MongoDb", "{D4926758-516D-4E87-AE21-8BE7BAD3BBB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataMesh", "DataMesh\DataMesh.csproj", "{0ED1FDC0-A525-4702-A93B-D4D7FDE37217}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataMesh", "DataMesh\DataMesh.csproj", "{0ED1FDC0-A525-4702-A93B-D4D7FDE37217}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataMesh.TypeRegistry.WebService", "DataMesh.TypeRegistry.WebService\DataMesh.TypeRegistry.WebService.csproj", "{B716D55B-BE2A-4DF2-ABC7-21A7E5103831}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,10 @@ Global
 		{0ED1FDC0-A525-4702-A93B-D4D7FDE37217}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0ED1FDC0-A525-4702-A93B-D4D7FDE37217}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0ED1FDC0-A525-4702-A93B-D4D7FDE37217}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B716D55B-BE2A-4DF2-ABC7-21A7E5103831}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B716D55B-BE2A-4DF2-ABC7-21A7E5103831}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B716D55B-BE2A-4DF2-ABC7-21A7E5103831}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B716D55B-BE2A-4DF2-ABC7-21A7E5103831}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

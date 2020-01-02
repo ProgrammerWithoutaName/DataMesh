@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -16,6 +17,8 @@ namespace DataMesh.Composites.MongoDb.Tests
 
         public Task<IEnumerable<T>> GetAll(Expression<Func<T, bool>> filter)
             => Task.FromResult(Store.Where(filter.Compile()));
+
+        public Task<IEnumerable<T>> GetAll() => Task.FromResult((IEnumerable<T>)Store.ToArray());
 
         public Task Set(Expression<Func<T, bool>> filter, T item)
         {

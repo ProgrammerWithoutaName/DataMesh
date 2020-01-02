@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Net;
 using System.Net.Http;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -9,47 +8,6 @@ using DataMesh.TypeDefinitions;
 
 namespace DataMesh.Composites
 {
-    public class DataSourceQuery: IDataSourceQuery
-    {
-        private readonly IDataSourceRegistry Registry;
-        private readonly ITypeSourceClient SourceClient;
-
-        //private readonly HttpClient HttpClientFactory;
-        // we need to make a web request. I will need to put in something for adding a key, or passing it somehow...
-        // Hey, actually, so for ability to access this, this is actually what Steven was trying to do. He was afraid to delegate.
-        // Note: this is actually testable!!
-        public async Task<string> GetResourceFromDataSource(string authToken, string resourceId, string sourceKey)
-        {
-            var source = await Registry.GetSource(sourceKey);
-            return await SourceClient.Retrieve(source, authToken, resourceId);
-        }
-    }
-
-    // for "Non Partial" Data providers. Those will need a bit more.
-    public interface ITypeSourceClient
-    {
-        Task<bool> HealthCheck(ITypeSource source);
-        Task<string> Retrieve(ITypeSource source, string authToken, string resourceId);
-        // This will need more work, and we will need to provide something for getting what it's going to be changed to.
-        Task<bool> RelinquishOwnership(ITypeSource source, string authToken, string entityId, string propertyKey, string resourceId);
-        Task<ITypeDefinition> GetTypeDefinition(ITypeSource source, string authToken);
-
-    }
-
-    public class JsonTypeDefinition : ITypeDefinition
-    {
-        public string TypeKey { get; set; }
-        public IDictionary<string, ITypeDefinitionItem> Properties { get; set; }
-    }
-
-    public class JsonTypeDefinitionItem : ITypeDefinitionItem
-    {
-        public string TypeKey { get; }
-        public bool Nullable { get; }
-        public bool Optional { get; }
-        public bool Array { get; }
-    }
-
     public class TypeSourceClient : ITypeSourceClient
     {
         public async Task<bool> HealthCheck(ITypeSource source)

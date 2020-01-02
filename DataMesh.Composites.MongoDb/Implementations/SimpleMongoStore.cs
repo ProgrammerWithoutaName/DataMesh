@@ -27,7 +27,13 @@ namespace DataMesh.Composites.MongoDb.Implementations
             return await cursor.ToListAsync();
         }
 
-        public Task Set(Expression<Func<T, bool>> filter, T item)
-            => Store.ReplaceOneAsync(filter, item);
+        public async Task<IEnumerable<T>> GetAll()
+        {
+            var cursor = await Store.FindAsync(_ => true);
+            return await cursor.ToListAsync();
+        }
+
+        public async Task Set(Expression<Func<T, bool>> filter, T item)
+            => await Store.ReplaceOneAsync(filter, item, new ReplaceOptions() { IsUpsert = true });
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace DataMesh.Composites.MongoDb
+namespace DataMesh.Composites.MongoDb.Implementations
 {
     public class MongoDataSourceRegistry : IMongoDataSourceRegistry
     {
