@@ -51,7 +51,7 @@ namespace DataMesh.Composites.Tests
     //  - Requires
     //      x - TypeRegistry Mongo DB
     //      x - ITypeRegistry Mongo Implementation
-    // X* DataSourceRegistry API 
+    // DataSourceRegistry API 
     //  - Requires
     //      x - DataSourceRegistry Mongo Database
     //      x - IDataSourceRegistry Mongo Implementation
@@ -64,10 +64,22 @@ namespace DataMesh.Composites.Tests
     //      - Name Service
     //      - Alternate Address Service
 
+    // * MAJOR TODOs-
+    //  Create/Update readme for the setup and running of this.
+    //  Create a few more "demo" api's, and a cheap UI
+    //  Make very sure readme makes sense. Add in an "Add your service here" demo maybe? Just add water!
+
     //* DataSourceRegistryApi Todos
     //  - We need to add some form of service layer that validates the types provided by the data source to the Type Registries Type
     //  - We need the DataSourceRegistry to also be able to react to type registry updates if they happen, and provide a "check" to see if it breaks anything.
+    //  - Set Up the Dependency Injection configuration
+    //  - Set up store configuration
 
+    // * Demo Composite Owner Service TODOs
+    //  - Clean up the code, break it apart
+    //  - Set up Mongo DB
+    //  - Set up Swagger
+    //  - Set up the configuration for the store
 
 //Done
 
