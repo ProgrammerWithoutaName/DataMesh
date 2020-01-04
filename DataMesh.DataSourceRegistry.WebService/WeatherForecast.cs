@@ -1,6 +1,6 @@
 using System;
 
-namespace DataMesh.TypeRegistry.WebService
+namespace DataMesh.DataSourceRegistry.WebService
 {
     public class WeatherForecast
     {

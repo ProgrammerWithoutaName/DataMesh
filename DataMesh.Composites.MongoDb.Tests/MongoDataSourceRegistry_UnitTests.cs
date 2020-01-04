@@ -10,7 +10,7 @@ namespace DataMesh.Composites.MongoDb.Tests
         [Fact]
         public async Task Registry_ShouldImplementCompositeSourceRegistry()
         {
-            var fakeStore = new FakeStore<ITypeSource>();
+            var fakeStore = new FakeStore<MongoDataSource>();
             var registry = new MongoDataSourceRegistry(fakeStore);
 
             var sourceRegistryTest = new DataSourceRegistry_Tests();

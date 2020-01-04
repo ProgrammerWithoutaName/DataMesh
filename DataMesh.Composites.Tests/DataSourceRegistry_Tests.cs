@@ -10,7 +10,7 @@ namespace DataMesh.Composites.Tests
     {
         public async Task VerifyImplementation(IDataSourceRegistry registry)
         {
-            var fakeSource = new FakeTypeSource()
+            var fakeSource = new FakeDataSource()
             {
                 SourceKey = "GivenSourceKey",
                 TypeDefinitionKey = "GivenTypeDefinitionKey",
@@ -33,7 +33,7 @@ namespace DataMesh.Composites.Tests
             Assert.Equal(fakeSource.HealthCheck.AbsoluteUri, results.HealthCheck.AbsoluteUri);
         }
 
-        public class FakeTypeSource : ITypeSource
+        public class FakeDataSource : IDataSource
         {
             
             public string SourceKey { get; set; }

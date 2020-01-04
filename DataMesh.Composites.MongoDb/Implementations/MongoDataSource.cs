@@ -4,7 +4,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace DataMesh.Composites.MongoDb.Implementations
 {
-    public class MongoTypeSource : ITypeSource
+    public class MongoDataSource : IDataSource
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]

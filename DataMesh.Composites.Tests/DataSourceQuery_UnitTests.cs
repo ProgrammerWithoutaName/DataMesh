@@ -10,8 +10,8 @@ namespace DataMesh.Composites.Tests
         public async Task GetResourceFromDataSource_ShouldReturnDatasourceResults()
         {
             var mockRegistry = new Mock<IDataSourceRegistry>();
-            var mockSourceClient = new Mock<ITypeSourceClient>();
-            var mockSource = new Mock<ITypeSource>();
+            var mockSourceClient = new Mock<IDataSourceClient>();
+            var mockSource = new Mock<IDataSource>();
 
             var givenToken = "Given Authentication Token";
             var givenResourceId = "GivenResourceId";

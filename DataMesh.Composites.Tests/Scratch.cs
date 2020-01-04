@@ -5,75 +5,78 @@ namespace DataMesh.Composites.Tests
 {
 
     //TODO
-        // Composite Source Registry API- Needs backing components
-        // Composite Read Api
-        // Composite Write API
-        // Type Registry API
-        // Source Registry API
-        // Composite Events
-        // Partial Reads
-        // Cascading Partial Reads
-        // Token Handling
-        // Error Handling Strategies
-        // Permission Handling Strategies
-        // Ability to enforce the Types (if registering with the incorrect thing, error should be thrown)
-        // Ability to Verify data in types, this would be an extension of Either the Composite or the Type Registry. Honestly could be both.
-        // The "what's available" View (HATOS style basically.)
-        // Relinquish Ownership- What the row is being replaced with API?
-        // Config Settings
-        // 3 Test API's- basic crud
-        // AWS setup
-        
-        // what do I need for MVP:
-        // Need ability to write, blind ownership transfer is acceptable for MVP.
-        // Need Ability to Read
-        // Above Requires a Type Registry, but don't need to worry about implementing the Type Enforcement or the Type Validation Services
-        // Above Requires a Source Registry
-        // For Now, we can "log" events, don't need to work them in immediately
-        // Configuration
-        // For MVP, just run locally. This is a POC and time is short.
+    // Composite Source Registry API- Needs backing components
+    // Composite Read Api
+    // Composite Write API
+    // Type Registry API
+    // Source Registry API
+    // Composite Events
+    // Partial Reads
+    // Cascading Partial Reads
+    // Token Handling
+    // Error Handling Strategies
+    // Permission Handling Strategies
+    // Ability to enforce the Types (if registering with the incorrect thing, error should be thrown)
+    // Ability to Verify data in types, this would be an extension of Either the Composite or the Type Registry. Honestly could be both.
+    // The "what's available" View (HATOS style basically.)
+    // Relinquish Ownership- What the row is being replaced with API?
+    // Config Settings
+    // 3 Test API's- basic crud
+    // AWS setup
 
-        // MVP Requirements:
-        // Composite Read API
-        //  - Requires
-        //      x - ICompositeSource implementation
-        //      x - CompositeSource Mongo Database
-        //      - DataSourceRegistry API Client. We should start with the microservice approach out of the gate.
-        //      - a few Test APIs- nothing special, just a basic CRUD Api
-        // Composite Write API
-        //  - Requires
-        //      x - Composite Datasource Mongo Database
-        //      - Composite Datasource Mongo Client
-        //      - ICompositeSink ??- The RelinquishOwnership Api
-        //      - DataSourceRegistry API Client(and API)
-        //      - a few Test API's that can implement RelinquishOwnership
-        // X TypeRegistry API (No type checking, no security atm.)
-        //  - Requires
-        //      x - TypeRegistry Mongo DB
-        //      x - ITypeRegistry Mongo Implementation
-        // DataSourceRegistry API
-        //  - Requires
-        //      x - DataSourceRegistry Mongo Database
-        //      x - IDataSourceRegistry Mongo Implementation
-        //      - ITypeRegistry API Client
-        // DependencyInjection
-        // Preferably a nice UI to show stuff (Probably actually required for an MVP)
-        // Configuration
-        // Test APIs
-        //      - Address Service
-        //      - Name Service
-        //      - Alternate Address Service
-        
-        
-        
-        //Done
-        
+    // what do I need for MVP:
+    // Need ability to write, blind ownership transfer is acceptable for MVP.
+    // Need Ability to Read
+    // Above Requires a Type Registry, but don't need to worry about implementing the Type Enforcement or the Type Validation Services
+    // Above Requires a Source Registry
+    // For Now, we can "log" events, don't need to work them in immediately
+    // Configuration
+    // For MVP, just run locally. This is a POC and time is short.
+
+    // MVP Requirements:
+    // Composite Read API
+    //  - Requires
+    //      x - ICompositeSource implementation
+    //      x - CompositeSource Mongo Database
+    //      - DataSourceRegistry API Client. We should start with the microservice approach out of the gate.
+    //      - a few Test APIs- nothing special, just a basic CRUD Api
+    // Composite Write API
+    //  - Requires
+    //      x - Composite Datasource Mongo Database
+    //      - Composite Datasource Mongo Client
+    //      - ICompositeSink ??- The RelinquishOwnership Api
+    //      - DataSourceRegistry API Client(and API)
+    //      - a few Test API's that can implement RelinquishOwnership
+    // X TypeRegistry API (No type checking, no security atm.)
+    //  - Requires
+    //      x - TypeRegistry Mongo DB
+    //      x - ITypeRegistry Mongo Implementation
+    // X* DataSourceRegistry API 
+    //  - Requires
+    //      x - DataSourceRegistry Mongo Database
+    //      x - IDataSourceRegistry Mongo Implementation
+    //      x - ITypeRegistry API Client
+    // DependencyInjection
+    // Preferably a nice UI to show stuff (Probably actually required for an MVP)
+    // Configuration
+    // Test APIs
+    //      - Address Service
+    //      - Name Service
+    //      - Alternate Address Service
+
+    //* DataSourceRegistryApi Todos
+    //  - We need to add some form of service layer that validates the types provided by the data source to the Type Registries Type
+    //  - We need the DataSourceRegistry to also be able to react to type registry updates if they happen, and provide a "check" to see if it breaks anything.
+
+
+//Done
+
     // Implementation base Exists
     public interface ICompositeSourceRegistryApi
     {
         // this should be able to double for updates.
-        void RegisterSource(string authToken, ITypeSource sourceService);
-        ITypeSource GetSource(string authToken, string sourceKey);
+        void RegisterSource(string authToken, IDataSource sourceService);
+        IDataSource GetSource(string authToken, string sourceKey);
     }
 
 

@@ -11,6 +11,7 @@ namespace DataMesh.TypeRegistry.WebService.Controllers
     [Route("[controller]")]
     public class TypeRegistryController : ControllerBase
     {
+        // TODO: HOOK AUTHENTICATION INTO THIS?
         private readonly ITypeRegistry Registry;
         private readonly ITypeDefinitionFactory DefinitionFactory;
 
@@ -22,17 +23,17 @@ namespace DataMesh.TypeRegistry.WebService.Controllers
 
         [HttpGet("{typeKey}")]
         public async Task<TypeDefinition> Get([FromRoute]string typeKey)
-            => DefinitionFactory.CreateResponse(await Registry.GetDefinition(typeKey));
+            => DefinitionFactory.CreateResponse(await Registry.GetDefinition(typeKey, ""));
 
         [HttpGet]
         public async Task<IEnumerable<TypeDefinition>> Get()
         {
-            var results = await Registry.GetDefinitions();
+            var results = await Registry.GetDefinitions("");
             return results.Select(DefinitionFactory.CreateResponse);
         }
 
         [HttpPost]
         public Task Set([FromBody] TypeDefinition typeDefinition)
-            => Registry.SetDefinition(DefinitionFactory.CreateSaveable(typeDefinition));
+            => Registry.SetDefinition(DefinitionFactory.CreateSaveable(typeDefinition), "");
     }
 }

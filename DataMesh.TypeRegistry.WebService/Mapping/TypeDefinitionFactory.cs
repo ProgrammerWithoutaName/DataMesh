@@ -20,6 +20,8 @@ namespace DataMesh.TypeRegistry.WebService.Mapping
                     })
             };
 
+        // TODO: Fix this, ether move away from the definition being explicitly JSON
+        // OR, create it's own implementation of the interface.
         public ITypeDefinition CreateSaveable(TypeDefinition typeDefinition)
             => new JsonTypeDefinition()
             {

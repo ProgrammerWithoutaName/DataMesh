@@ -17,6 +17,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataMesh", "DataMesh\DataMe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataMesh.TypeRegistry.WebService", "DataMesh.TypeRegistry.WebService\DataMesh.TypeRegistry.WebService.csproj", "{B716D55B-BE2A-4DF2-ABC7-21A7E5103831}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataMesh.WebClients", "DataMesh.WebClients\DataMesh.WebClients.csproj", "{2F39F74A-FAC3-4C4F-A8D5-40896503E51D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebClients", "WebClients", "{741372D3-26CC-4609-B1A7-83A8E1FF0F4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataMesh.WebClients.Tests", "DataMesh.WebClients.Tests\DataMesh.WebClients.Tests.csproj", "{7A9A7DE4-2708-43D3-8DF3-A4272954AC88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataMesh.DataSourceRegistry.WebService", "DataMesh.DataSourceRegistry.WebService\DataMesh.DataSourceRegistry.WebService.csproj", "{749EDB7E-A614-4638-8782-700589765676}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +55,18 @@ Global
 		{B716D55B-BE2A-4DF2-ABC7-21A7E5103831}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B716D55B-BE2A-4DF2-ABC7-21A7E5103831}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B716D55B-BE2A-4DF2-ABC7-21A7E5103831}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F39F74A-FAC3-4C4F-A8D5-40896503E51D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F39F74A-FAC3-4C4F-A8D5-40896503E51D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F39F74A-FAC3-4C4F-A8D5-40896503E51D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F39F74A-FAC3-4C4F-A8D5-40896503E51D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A9A7DE4-2708-43D3-8DF3-A4272954AC88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A9A7DE4-2708-43D3-8DF3-A4272954AC88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A9A7DE4-2708-43D3-8DF3-A4272954AC88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A9A7DE4-2708-43D3-8DF3-A4272954AC88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{749EDB7E-A614-4638-8782-700589765676}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{749EDB7E-A614-4638-8782-700589765676}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{749EDB7E-A614-4638-8782-700589765676}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{749EDB7E-A614-4638-8782-700589765676}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +74,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{D7D63604-EF06-48B2-9096-52CA64296474} = {D4926758-516D-4E87-AE21-8BE7BAD3BBB2}
 		{B738C4E3-6D98-47E9-B3AD-FB4223722D43} = {D4926758-516D-4E87-AE21-8BE7BAD3BBB2}
+		{2F39F74A-FAC3-4C4F-A8D5-40896503E51D} = {741372D3-26CC-4609-B1A7-83A8E1FF0F4B}
+		{7A9A7DE4-2708-43D3-8DF3-A4272954AC88} = {741372D3-26CC-4609-B1A7-83A8E1FF0F4B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {75AB80F7-61DE-4782-B5E1-0882D93D6110}

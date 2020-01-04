@@ -53,7 +53,7 @@ public class TypeRegistry_Tests
     {
         var expectedKey = "Thing";
         var expectedDefinition = CreateDefinition(expectedKey);
-        await registry.SetDefinition(expectedDefinition);
+        await registry.SetDefinition(expectedDefinition, "");
         await AssertDefinitionSet(expectedKey, expectedDefinition, registry);
     }
 
@@ -71,7 +71,7 @@ public class TypeRegistry_Tests
 
     public async Task AssertDefinitionSet(string typeName, ITypeDefinition expectedDefinition, ITypeRegistry registry)
     {
-        var results = await registry.GetDefinition(typeName);
+        var results = await registry.GetDefinition(typeName, "");
 
         Assert.Equal(results.TypeKey, expectedDefinition.TypeKey);
         Assert.Equal(expectedDefinition.Properties.Count, results.Properties.Count);

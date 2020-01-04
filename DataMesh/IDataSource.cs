@@ -2,7 +2,7 @@
 
 namespace DataMesh
 {
-    public interface ITypeSource
+    public interface IDataSource
     {
         string SourceKey { get; }
         string TypeDefinitionKey { get; }

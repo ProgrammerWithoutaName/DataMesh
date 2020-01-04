@@ -2,12 +2,13 @@
 
 namespace DataMesh.Composites
 {
+    //TODO: This may need to either be in it's own library, or another library may need to be brought into here. (DataMesh.WebClients)
     public class DataSourceQuery : IDataSourceQuery
     {
         private readonly IDataSourceRegistry Registry;
-        private readonly ITypeSourceClient SourceClient;
+        private readonly IDataSourceClient SourceClient;
 
-        public DataSourceQuery(IDataSourceRegistry registry, ITypeSourceClient sourceClient)
+        public DataSourceQuery(IDataSourceRegistry registry, IDataSourceClient sourceClient)
         {
             Registry = registry;
             SourceClient = sourceClient;
