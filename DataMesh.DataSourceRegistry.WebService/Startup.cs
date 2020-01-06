@@ -1,16 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using DataMesh.Composites.MongoDb;
+using DataMesh.Composites.MongoDb.Configuration;
+using DataMesh.Composites.MongoDb.Implementations;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
+using MongoDB.Driver;
 
 namespace DataMesh.DataSourceRegistry.WebService
 {
@@ -37,6 +35,20 @@ namespace DataMesh.DataSourceRegistry.WebService
                 });
 
             });
+
+            //TODO: make this better, needs to be moved.
+            services.Configure<MongoStoreDatabaseSettings>(
+                Configuration.GetSection("MongoStoreDatabaseSettings"));
+            services.AddTransient(typeof(ISimpleMongoStore<>), typeof(SimpleMongoStore<>));
+
+            // TODO: Also, we should not use the json file to store this. This is a POC, but really this needs to be environmental.
+            services.AddSingleton<IMongoCollection<MongoDataSource>>(sp
+                => DataSourceRegistryConfiguration.CreateTypeDefinitionStoreClient(
+                    sp.GetRequiredService<IOptions<MongoStoreDatabaseSettings>>().Value));
+
+            services.AddTransient<IDataSourceRegistry, MongoDataSourceRegistry>();
+            services.AddTransient(typeof(ISimpleMongoStore<>), typeof(SimpleMongoStore<>));
+            //services.AddSingleton<>()
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

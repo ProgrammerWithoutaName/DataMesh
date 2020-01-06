@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using MongoDB.Bson;
 
 namespace DataMesh.Composites.MongoDb.Implementations
 {
@@ -21,6 +22,7 @@ namespace DataMesh.Composites.MongoDb.Implementations
         public Task RegisterSource(IDataSource dataSource)
             => Store.Set(source => source.SourceKey == dataSource.SourceKey, new MongoDataSource()
             {
+                Id = new ObjectId().ToString(),
                 SourceKey = dataSource.SourceKey,
                 TypeDefinitionKey = dataSource.TypeDefinitionKey,
                 PartialDataProvider = dataSource.PartialDataProvider,

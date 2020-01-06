@@ -66,7 +66,7 @@ namespace DataMesh.Composites.Tests
 
     // * MAJOR TODOs-
     //  Create/Update readme for the setup and running of this.
-    //  Create a few more "demo" api's, and a cheap UI
+    //  Create a few more "demo" api's, and a cheap UI (1 down. few more to go.)
     //  Make very sure readme makes sense. Add in an "Add your service here" demo maybe? Just add water!
 
     //* DataSourceRegistryApi Todos

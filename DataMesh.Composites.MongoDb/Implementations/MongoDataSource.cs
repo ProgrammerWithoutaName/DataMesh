@@ -8,6 +8,8 @@ namespace DataMesh.Composites.MongoDb.Implementations
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
+        public string Id { get; set; }
+
         public string TypeDefinitionKey { get; set; }
 
         public string SourceKey { get; set; }

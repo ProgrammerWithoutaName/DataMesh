@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DataMesh.Composites.MongoDb\DataMesh.Composites.MongoDb.csproj" />
     <ProjectReference Include="..\DataMesh\DataMesh.csproj" />
   </ItemGroup>
 

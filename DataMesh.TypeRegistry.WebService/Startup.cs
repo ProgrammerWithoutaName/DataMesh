@@ -2,7 +2,6 @@ using DataMesh.Composites.MongoDb;
 using DataMesh.Composites.MongoDb.Configuration;
 using DataMesh.Composites.MongoDb.Implementations;
 using DataMesh.TypeDefinitions;
-using DataMesh.TypeRegistry.WebService.Controllers;
 using DataMesh.TypeRegistry.WebService.Mapping;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -12,7 +11,6 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using MongoDB.Driver;
-using Swashbuckle.AspNetCore.Swagger;
 
 namespace DataMesh.TypeRegistry.WebService
 {

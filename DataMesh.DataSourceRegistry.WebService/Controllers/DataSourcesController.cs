@@ -10,12 +10,10 @@ namespace DataMesh.DataSourceRegistry.WebService.Controllers
     [Route("[controller]")]
     public class DataSourcesController : ControllerBase
     {
-        private readonly ILogger<DataSourcesController> Logger;
         private readonly IDataSourceRegistry Registry;
 
-        public DataSourcesController(ILogger<DataSourcesController> logger, IDataSourceRegistry registry)
+        public DataSourcesController(IDataSourceRegistry registry)
         {
-            Logger = logger;
             Registry = registry;
         }
 
@@ -38,7 +36,7 @@ namespace DataMesh.DataSourceRegistry.WebService.Controllers
         public Task Register([FromBody] DataSource source)
             => Registry.RegisterSource(source);
 
-        public DataSource CreateResponse(IDataSource source)
+        private DataSource CreateResponse(IDataSource source)
             => new DataSource()
             {
                 SourceKey = source.SourceKey,
