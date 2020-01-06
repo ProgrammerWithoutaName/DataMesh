@@ -1,4 +1,4 @@
-﻿namespace DataMesh.Demo.ItemProviderSource
+﻿namespace DataMesh.Demo.ItemProviderSource.ItemEditor.Implementations
 {
     public class ItemEditorRelinquishmentResponse : IRelinquishmentResponse
     {

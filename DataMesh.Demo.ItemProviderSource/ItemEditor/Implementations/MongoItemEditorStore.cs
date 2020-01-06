@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using DataMesh.Demo.ItemProviderSource.Controllers;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
-namespace DataMesh.Demo.ItemProviderSource
+namespace DataMesh.Demo.ItemProviderSource.ItemEditor.Implementations
 {
     public class MongoItemEditorStore : IItemEditorStore
     {

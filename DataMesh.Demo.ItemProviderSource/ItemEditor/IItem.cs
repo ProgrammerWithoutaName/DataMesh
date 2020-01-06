@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DataMesh.Demo.ItemProviderSource
+namespace DataMesh.Demo.ItemProviderSource.ItemEditor
 {
     public interface IItem
     {

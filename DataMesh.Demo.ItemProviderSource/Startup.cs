@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DataMesh.Demo.ItemProviderSource.ItemEditor;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -10,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 
 namespace DataMesh.Demo.ItemProviderSource
 {
@@ -26,6 +28,17 @@ namespace DataMesh.Demo.ItemProviderSource
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddMvc();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo()
+                {
+                    Title = "Type Registry API",
+                    Version = "1" // not actually the version, TODO: put in a correct version number.
+                });
+
+            });
+
             services.Configure<ItemEditorMongoStoreSettings>(Configuration.GetSection("MongoStoreDatabaseSettings"));
             services.RegisterDemoItemEditorService();
         }
@@ -47,6 +60,12 @@ namespace DataMesh.Demo.ItemProviderSource
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Item Editor API For POC");
             });
         }
     }

@@ -1,6 +1,6 @@
 ﻿using DataMesh.TypeDefinitions;
 
-namespace DataMesh.Demo.ItemProviderSource
+namespace DataMesh.Demo.ItemProviderSource.ItemEditor.Implementations
 {
     public class ItemEditorTypeDefinitionItem : ITypeDefinitionItem
     {

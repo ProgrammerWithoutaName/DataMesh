@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using DataMesh.Demo.ItemProviderSource.Controllers;
 
-namespace DataMesh.Demo.ItemProviderSource
+namespace DataMesh.Demo.ItemProviderSource.ItemEditor
 {
     public interface IItemEditorStore
     {

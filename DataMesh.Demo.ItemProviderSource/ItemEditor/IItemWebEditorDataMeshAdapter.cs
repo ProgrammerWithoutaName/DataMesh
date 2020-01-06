@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using DataMesh.TypeDefinitions;
 
-namespace DataMesh.Demo.ItemProviderSource
+namespace DataMesh.Demo.ItemProviderSource.ItemEditor
 {
     public interface IItemWebEditorDataMeshAdapter
     {

@@ -2,7 +2,7 @@
 using System.Linq;
 using DataMesh.TypeDefinitions;
 
-namespace DataMesh.Demo.ItemProviderSource
+namespace DataMesh.Demo.ItemProviderSource.ItemEditor.Implementations
 {
     public class ItemEditorTypeDefinition : ITypeDefinition
     {
