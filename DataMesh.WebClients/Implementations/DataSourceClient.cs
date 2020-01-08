@@ -1,4 +1,6 @@
 ﻿using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text.Json;
 using System.Threading.Tasks;
 using DataMesh.TypeDefinitions;
 using DataMesh.WebClients.Tests;
@@ -32,13 +34,13 @@ namespace DataMesh.Composites
             return await results.Content.ReadAsStringAsync();
         }
 
-        public async Task<bool> RelinquishOwnership(IDataSource source, string authToken, string entityId, string propertyKey, string resourceId)
+        public async Task<bool> RelinquishOwnership(IDataSource source, string authToken, IRelinquishmentRequest request)
         {
             var client = ClientFactory.CreateClient(source.RelinquishOwnership, authToken);
 
             // TODO: Error Handling!! Also, figure out how the content is filled out. This is a place holder.
-            var results = await client.PostAsync($"{entityId}/{propertyKey}/{resourceId}", 
-                new StringContent(""));
+            var results = await client.PostAsync($"relinquish", 
+                new StringContent(JsonSerializer.Serialize(request)));
             return results.IsSuccessStatusCode;
         }
 

@@ -51,7 +51,7 @@ namespace DataMesh.Composites.Tests
     //  - Requires
     //      x - TypeRegistry Mongo DB
     //      x - ITypeRegistry Mongo Implementation
-    // DataSourceRegistry API 
+    // x- DataSourceRegistry API 
     //  - Requires
     //      x - DataSourceRegistry Mongo Database
     //      x - IDataSourceRegistry Mongo Implementation
@@ -80,6 +80,12 @@ namespace DataMesh.Composites.Tests
     //  - Set up Mongo DB
     //  - Set up Swagger
     //  - Set up the configuration for the store
+
+    // *Reorg the project structure: There is the core system, but consider how this needs to be used.
+    // We need to organize the projects into how they get used. DataSources/TypeRegistries/Composites and their webClients.
+    // Also, where do we break off the authentication? in reality, this ends up being a pass-through service, so maybe
+    // the token is just a ride-along. This system needs to take that into account.
+    //  Perhaps a design utilizing a more functional approach might simplify things. This will be for pass 2.
 
 //Done
 

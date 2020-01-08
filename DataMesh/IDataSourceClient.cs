@@ -8,7 +8,7 @@ namespace DataMesh.Composites
         Task<bool> HealthCheck(IDataSource source);
         Task<string> Retrieve(IDataSource source, string authToken, string resourceId);
         // This will need more work, and we will need to provide something for getting what it's going to be changed to.
-        Task<bool> RelinquishOwnership(IDataSource source, string authToken, string entityId, string propertyKey, string resourceId);
+        Task<bool> RelinquishOwnership(IDataSource source, string authToken, IRelinquishmentRequest request);
         Task<ITypeDefinition> GetTypeDefinition(IDataSource source, string authToken);
     }
 }

@@ -4,14 +4,24 @@ namespace DataMesh.Composites.MongoDb.Implementations
 {
     public class CompositeSourceMongoQuery : ICompositeSourceMongoQuery
     {
-        private readonly ISimpleMongoStore<ICompositeEntity> Store;
+        private readonly ISimpleMongoStore<MongoSerializableCompositeEntity> Store;
 
-        public CompositeSourceMongoQuery(ISimpleMongoStore<ICompositeEntity> store)
+        public CompositeSourceMongoQuery(ISimpleMongoStore<MongoSerializableCompositeEntity> store)
         {
             Store = store;
         }
 
-        public Task<ICompositeEntity> GetComposite(string resourceId)
-            => Store.GetFirst(composite => composite.ResourceId == resourceId);
+        public async Task<ICompositeEntity> GetComposite(string resourceId)
+        {
+            var results = await Store.GetFirst(composite => composite.ResourceId == resourceId);
+            return new MongoCompositeEntity()
+            {
+                ResourceId = results.ResourceId,
+                Items = results.Items.Values,
+                TypeDefinition = results.TypeDefinition
+            };
+        }
+
+        
     }
 }
